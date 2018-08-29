@@ -1,0 +1,17 @@
+{
+  "name": "nws-weather-widget",
+  "version": "1.0.0",
+  "description": "Babel es6 Weather Widget",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Pruzaniec",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
