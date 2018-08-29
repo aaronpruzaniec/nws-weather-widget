@@ -17,6 +17,7 @@ var LookupWeather = function () {
     this.data = d;
     this.city = d.productionCenter;
     this.local = d.currentobservation;
+    this.temperature = this.local.Temp;
     this.forecast = d.data;
   }
 
@@ -33,12 +34,9 @@ var LookupWeather = function () {
   }, {
     key: "log",
     value: function log() {
-      console.log(this);
-      var a = "<a>" + this.city + "</a>";
-      // this.append(body, a);
+      var a = "<div><a>" + this.city + " " + this.temperature + "&deg;</a></div>";
       var b = document.querySelector("body");
       b.innerHTML = b.innerHTML + a;
-      // return ;
     }
   }]);
 
@@ -52,7 +50,7 @@ var getData = function getData(a) {
       return resp.json();
     }).then(function (data) {
       b.push(new LookupWeather(data));
-      console.log(b);
+      b[b.length - 1].log();
     });
   });
 };

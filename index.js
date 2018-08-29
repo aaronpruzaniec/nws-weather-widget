@@ -9,6 +9,7 @@ class LookupWeather {
     this.data = d;
     this.city = d.productionCenter;
     this.local = d.currentobservation;
+    this.temperature = this.local.Temp;
     this.forecast = d.data;
   }
 
@@ -21,12 +22,9 @@ class LookupWeather {
   }
 
   log() {
-    console.log(this);
-    let a = "<a>" + this.city + "</a>";
-    // this.append(body, a);
+    let a = "<div><a>" + this.city + " " + this.temperature + "&deg;</a></div>";
     let b = document.querySelector("body");
     b.innerHTML = b.innerHTML + a;
-    // return ;
   }
 }
 
@@ -42,7 +40,7 @@ let getData = function(a) {
       .then(resp => resp.json())
       .then(function(data) {
         b.push(new LookupWeather(data));
-        console.log(b);
+        b[b.length - 1].log();
       });
   });
 };
