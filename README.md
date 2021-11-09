@@ -1,1 +1,1 @@
-Weather widget written in Babel
+Weather widget written in JavaScript
